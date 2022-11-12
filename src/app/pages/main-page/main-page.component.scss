@@ -1,0 +1,49 @@
+nav {
+  position: absolute;
+  width: 0;
+  height: 100vh;
+  background: rgb(41, 41, 65);
+  color: rgb(245, 245, 245);
+  transition-property: width;
+  transition-duration: .6s;
+
+  ul {
+    list-style-type: none;
+    padding-top: 24px;
+    li:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+
+  .toggle-nav {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    cursor: pointer;
+    height: fit-content;
+    transition-property: left;
+    transition-duration: .6s;
+
+    .bar {
+      width: 32px;
+      height: 4px;
+      background: #000;
+      margin-top: 4px;
+    }
+  }
+}
+
+main {
+  position: absolute;
+  width: calc(100vw - 24px);
+  margin: 100px 0 0 24px;
+  transition-property: width;
+  transition-property: left;
+  transition-duration: .6s;
+  section:first-child {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+}

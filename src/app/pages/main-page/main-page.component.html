@@ -1,0 +1,16 @@
+<nav #navMenu>
+  <ul>
+    <li>Пункт меню</li>
+  </ul>
+  <div class="toggle-nav" #toggleNav>
+    <div class="bar" *ngFor="let item of multiArray"></div>
+  </div>
+</nav>
+<main #main>
+  <section>
+    <app-no-behaviour-button>{{buttonText}}</app-no-behaviour-button>
+    <app-checkbox></app-checkbox>
+    <app-combobox [items]="selectItems"></app-combobox>
+  </section>
+  <section></section>
+</main>
