@@ -1,0 +1,6 @@
+<div class="combobox">
+  <app-textfield (emitValue)="getValue($event)"></app-textfield>
+  <ng-container *ngFor="let item of items">
+    <div class="option" [attr.value]="item.name">{{item.name}}</div>
+  </ng-container>
+</div>

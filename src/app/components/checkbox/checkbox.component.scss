@@ -1,0 +1,15 @@
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 170px;
+
+  input {
+    width: 24px;
+    height: 24px;
+  }
+
+  label {
+    left: 16px;
+  }
+}
