@@ -24,6 +24,9 @@ export class MainPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
     this.isNavOpen$.pipe(takeUntil(this.destroy$)).subscribe(value => this.isNavOpen = value);
+    window.onbeforeunload = () => {
+      sessionStorage.clear();
+    }
   }
 
   ngAfterViewInit(): void  {
