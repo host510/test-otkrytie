@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, AfterViewInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, AfterViewInit, ViewChild, ElementRef, Renderer2, Input } from '@angular/core';
 
 @Component({
   selector: 'app-textfield',
@@ -7,6 +7,7 @@ import { Component, EventEmitter, OnInit, Output, AfterViewInit, ViewChild, Elem
 })
 export class TextfieldComponent implements OnInit, AfterViewInit {
 
+  @Input() placeholderValue: string = '';
   @Output() emitValue: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('textField') textField: ElementRef | undefined;
 

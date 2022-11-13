@@ -1,6 +1,12 @@
-<div class="combobox">
-  <app-textfield (emitValue)="getValue($event)"></app-textfield>
-  <ng-container *ngFor="let item of items">
-    <div class="option" [attr.value]="item.name">{{item.name}}</div>
-  </ng-container>
+<div class="combobox" (clickOutside)="isOptionOpen = false">
+  <div (click)="isOptionOpen = true">
+    <app-textfield (emitValue)="findOption($event)" [placeholderValue]="selectedItemsNames"></app-textfield>
+  </div>
+  <div class="option-container" *ngIf="isOptionOpen">
+    <ng-container *ngFor="let item of filteredItems">
+      <div class="option">
+        <app-checkbox (emitValue)="getOptionValue($event)" [checkboxValue]="item.name" [id]="item.id"></app-checkbox>
+      </div>
+    </ng-container>
+  </div>
 </div>

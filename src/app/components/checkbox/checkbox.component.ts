@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, Renderer2, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-checkbox',
@@ -7,18 +7,25 @@ import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, Renderer2 } fr
 })
 export class CheckboxComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('checkboxEl') checkboxEl: ElementRef | undefined;
-  checkboxLabelValue = 'Не выбрано';
+  @Input() id: number | string | undefined;
+  @Input() checkboxValue: string = '';
+  @Output() emitClick: EventEmitter<string> = new EventEmitter<string>();
+  @Output() emitValue: EventEmitter<any> = new EventEmitter<string>();
+  @ViewChild('checkbox') checkbox: ElementRef | undefined;
+  checkedValue: string | null = 'false';
 
   constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
+    this.checkedValue = sessionStorage.getItem(`${this.checkboxValue}`);
   }
 
   ngAfterViewInit(): void {
-    this.renderer.listen(this.checkboxEl?.nativeElement, 'click', () => {
-      this.checkboxLabelValue = this.checkboxEl?.nativeElement.checked ? 'Выбрано' : 'Не выбрано';
+    this.renderer.listen(this.checkbox?.nativeElement, 'click', (event) => {
+      this.emitValue.emit(event.target.value);
+      this.emitClick.emit('click');
     });
+
   }
 
 }

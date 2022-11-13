@@ -1,12 +1,10 @@
 button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding: 12px 24px;
-  background: rgb(133, 34, 34);
+  background: rgb(189, 189, 175);
   color: rgb(245, 245, 245);
   border: 0;
   border-radius: 5px;
-
-  &:hover {
-    cursor: pointer;
-    background: rgba(133, 34, 34, .8);
-  }
 }

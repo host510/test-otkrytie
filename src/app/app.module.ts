@@ -8,6 +8,7 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { ComboboxComponent } from './components/combobox/combobox.component';
 import { TextfieldComponent } from './components/textfield/textfield.component';
 import { GridComponent } from './components/grid/grid.component';
+import { ClickOutsideDirective } from './directives/click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GridComponent } from './components/grid/grid.component';
     CheckboxComponent,
     ComboboxComponent,
     TextfieldComponent,
-    GridComponent
+    GridComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule

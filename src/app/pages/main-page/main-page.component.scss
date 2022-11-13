@@ -1,25 +1,19 @@
 nav {
+  display: flex;
+  justify-content: center;
   position: absolute;
-  width: 0;
+  width: 13vw;
   height: 100vh;
   background: rgb(41, 41, 65);
   color: rgb(245, 245, 245);
   transition-property: width;
   transition-duration: .6s;
-
-  ul {
-    list-style-type: none;
-    padding-top: 24px;
-    li:hover {
-      cursor: pointer;
-      transform: scale(1.1);
-    }
-  }
+  padding: 24px;
 
   .toggle-nav {
     position: absolute;
     top: 24px;
-    left: 24px;
+    left: calc(13vw + 72px);
     cursor: pointer;
     height: fit-content;
     transition-property: left;
@@ -27,7 +21,7 @@ nav {
 
     .bar {
       width: 32px;
-      height: 4px;
+      height: 6px;
       background: #000;
       margin-top: 4px;
     }
@@ -36,7 +30,8 @@ nav {
 
 main {
   position: absolute;
-  width: calc(100vw - 24px);
+  width: calc(100vw - 13vw);
+  left: 13vw;
   margin: 100px 0 0 24px;
   transition-property: width;
   transition-property: left;

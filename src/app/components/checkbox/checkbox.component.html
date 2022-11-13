@@ -1,4 +1,4 @@
 <div class="checkbox-wrapper">
-  <input id="checkbox" type="checkbox" #checkboxEl>
-  <label for="checkbox">{{checkboxLabelValue}}</label>
+  <input [checked]="checkedValue" [id]="id" [value]="checkboxValue" type="checkbox" #checkbox>
+  <label [for]="id">{{checkboxValue}}</label>
 </div>

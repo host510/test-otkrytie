@@ -1,15 +1,15 @@
 <nav #navMenu>
-  <ul>
-    <li>Пункт меню</li>
-  </ul>
+  <ng-container *ngIf="isNavOpen">
+    <app-no-behaviour-button>{{buttonText}}</app-no-behaviour-button>
+  </ng-container>
   <div class="toggle-nav" #toggleNav>
     <div class="bar" *ngFor="let item of multiArray"></div>
   </div>
 </nav>
 <main #main>
   <section>
-    <app-no-behaviour-button>{{buttonText}}</app-no-behaviour-button>
-    <app-checkbox></app-checkbox>
+    <app-checkbox (emitClick)="changeCheckboxValue()" [id]="'checkbox'" [checkboxValue]="checkboxLabel">
+    </app-checkbox>
     <app-combobox [items]="selectItems"></app-combobox>
   </section>
   <section></section>
