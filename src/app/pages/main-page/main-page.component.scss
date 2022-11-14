@@ -1,7 +1,7 @@
 nav {
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   width: 13vw;
   height: 100vh;
   background: rgb(41, 41, 65);
@@ -30,15 +30,23 @@ nav {
 
 main {
   position: absolute;
-  width: calc(100vw - 13vw);
-  left: 13vw;
-  margin: 100px 0 0 24px;
+  width: calc(100vw - (13vw + 72px));
+  left: calc(13vw + 48px);
+  top: 100px;
   transition-property: width;
   transition-property: left;
   transition-duration: .6s;
+
   section:first-child {
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
+  }
+
+  section:nth-child(2) {
+    width: calc(100% - 96px);
+    padding: 48x 0 0 48px;
+    margin-left: 60px;
+    margin-top: 60px;
   }
 }

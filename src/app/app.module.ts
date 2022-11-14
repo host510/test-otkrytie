@@ -9,6 +9,7 @@ import { ComboboxComponent } from './components/combobox/combobox.component';
 import { TextfieldComponent } from './components/textfield/textfield.component';
 import { GridComponent } from './components/grid/grid.component';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
     ClickOutsideDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AgGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]

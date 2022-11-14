@@ -35,8 +35,8 @@ export class MainPageComponent implements OnInit, AfterViewInit, OnDestroy {
       this.renderer.setStyle(this.navMenu?.nativeElement, 'width', this.isNavOpen ? '13vw' : '0');
       this.renderer.setStyle(this.navMenu?.nativeElement, 'padding', this.isNavOpen ? '24px' : '0');
       this.renderer.setStyle(this.toggleNav?.nativeElement, 'left', this.isNavOpen ? 'calc(13vw + 72px)' : '24px');
-      this.renderer.setStyle(this.main?.nativeElement, 'left', this.isNavOpen ? '13vw' : '24px');
-      this.renderer.setStyle(this.main?.nativeElement, 'width', this.isNavOpen ? 'calc(100vw - 13vw - 24px)' : 'calc(100vw - 48px)');
+      this.renderer.setStyle(this.main?.nativeElement, 'left', this.isNavOpen ? '13vw' : '0');
+      this.renderer.setStyle(this.main?.nativeElement, 'width', this.isNavOpen ? 'calc(100vw - 13vw - 24px)' : '100vw');
     });
   }
 
